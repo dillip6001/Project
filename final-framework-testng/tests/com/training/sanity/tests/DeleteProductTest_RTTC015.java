@@ -61,8 +61,7 @@ import org.testng.annotations.AfterMethod;
 			String expectedmessage = "Success: You have modified products!";
 		    String actualMessage = ProductsPOM_Retail.AlertSuccess();
 		    Assert.assertTrue(actualMessage.contains(expectedmessage));
-	 
-		    
+			    
 			
 	}
 	   @AfterClass
