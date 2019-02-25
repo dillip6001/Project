@@ -5,7 +5,8 @@
 	import java.io.IOException;
 	import java.util.Properties;
 
-	import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -20,7 +21,7 @@ import org.testng.annotations.AfterMethod;
 	import com.training.utility.DriverFactory;
 	import com.training.utility.DriverNames;
 
-	public class ProductsTest_RTTC014{
+	public class DeleteProductsTest_RTTC44{
 
 		private WebDriver driver;
 		private String baseUrl;
@@ -44,37 +45,29 @@ import org.testng.annotations.AfterMethod;
 			screenShot = new ScreenShot(driver); 
 			// open the browser 
 			driver.get(baseUrl);
-			
-		}
-
-	   @Test (priority=1)
-		public void FilterProductDetails() throws InterruptedException {
+		}		
+	   @Test(priority=1)
+		public void DeleteProductTest() throws InterruptedException {
 			LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
 			LoginPOM_Retail.clickLoginBtn(); 
-			screenShot.captureScreenShot("First");
 			HomePOM_Retail.ClickonOnProducts();
-			ProductsPOM_Retail.ProductName("Integer vitae iaculis massa");
-			ProductsPOM_Retail.FilterButtonClick();
-			ProductsPOM_Retail.InputPrice("805");
-			ProductsPOM_Retail.FilterButtonClick();
-			screenShot.captureScreenShot("RTTC014");
-			String expectedmessage = "Integer vitae iaculis massa";
-		    String actualMessage = ProductsPOM_Retail.Filtered();
-		    screenShot.captureScreenShot("RTTC014_1");
-		    Assert.assertEquals(actualMessage,expectedmessage);
-		    Thread.sleep(3000);
-		    
+			ProductsPOM_Retail.FingerRingcheckbox();
+			ProductsPOM_Retail.EarRingscheckbox();
+	    	ProductsPOM_Retail.DeleteButtonClick();
+			ProductsPOM_Retail.AlertAccept();
+			Thread.sleep(2000);
+			String expectedmessage = "Success: You have modified products!";
+		    String actualMessage = ProductsPOM_Retail.AlertSuccess();
+		    Assert.assertTrue(actualMessage.contains(expectedmessage));
+			    
 			
 	}
-	   
 	   @AfterClass
-	   
 		public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 		}
-
 	}
 	
 

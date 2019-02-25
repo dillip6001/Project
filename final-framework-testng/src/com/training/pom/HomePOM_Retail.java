@@ -25,6 +25,13 @@ public class HomePOM_Retail {
 	@FindBy(linkText="Products")
 	private WebElement Products;
 	
+	@FindBy(css=".fa-shopping-cart")
+	private WebElement ShopingCart;
+	
+	
+	
+	
+	
 			
 
 	
@@ -42,6 +49,14 @@ public class HomePOM_Retail {
         Actions action = new Actions(driver);
         action.moveToElement(element).build().perform();
         driver.findElement(By.linkText("Products")).click();
+	}
+	
+public void  ShoppingCartOrders() {
+		
+		WebElement element = driver.findElement(By.cssSelector(".fa-shopping-cart"));
+        Actions action = new Actions(driver);
+        action.moveToElement(element).build().perform();
+        driver.findElement(By.linkText("Orders")).click();
 	}
 	
 	

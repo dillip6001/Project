@@ -1,7 +1,9 @@
 
 	package com.training.sanity.tests;
 
-	import java.io.FileInputStream;
+	import static org.testng.Assert.assertTrue;
+
+import java.io.FileInputStream;
 	import java.io.IOException;
 	import java.util.Properties;
 
@@ -14,19 +16,22 @@ import org.testng.annotations.AfterMethod;
 	import org.testng.annotations.Test;
 
 	import com.training.generics.ScreenShot;
-    import com.training.pom.HomePOM_Retail;
+import com.training.pom.CateogriesPOM_Retail;
+import com.training.pom.HomePOM_Retail;
     import com.training.pom.LoginPOM;
 	import com.training.pom.LoginPOM_Retail;
-	import com.training.utility.DriverFactory;
+import com.training.pom.ShoppingCartOrdersPOM_Retail;
+import com.training.utility.DriverFactory;
 	import com.training.utility.DriverNames;
 
-	public class ProductsTest_RTTC014{
+	public class InvoiceGenerationTest_RTTC45{
 
 		private WebDriver driver;
 		private String baseUrl;
 		private  LoginPOM_Retail LoginPOM_Retail;
 		private  HomePOM_Retail HomePOM_Retail;
-		private  com.training.pom.ProductsPOM_Retail ProductsPOM_Retail;
+		private  CateogriesPOM_Retail CateogriesPOM_Retail;
+		private ShoppingCartOrdersPOM_Retail ShoppingCartOrdersPOM_Retail;
 		
 		private static Properties properties;
 		private ScreenShot screenShot;
@@ -39,7 +44,7 @@ import org.testng.annotations.AfterMethod;
 			driver = DriverFactory.getDriver(DriverNames.CHROME);
 			LoginPOM_Retail = new LoginPOM_Retail(driver);
 			HomePOM_Retail=  new  HomePOM_Retail(driver);
-			ProductsPOM_Retail=new com.training.pom.ProductsPOM_Retail(driver);
+			ShoppingCartOrdersPOM_Retail=new ShoppingCartOrdersPOM_Retail(driver);
 			baseUrl = properties.getProperty("baseURL");
 			screenShot = new ScreenShot(driver); 
 			// open the browser 
@@ -48,33 +53,28 @@ import org.testng.annotations.AfterMethod;
 		}
 
 	   @Test (priority=1)
-		public void FilterProductDetails() throws InterruptedException {
+		public void InvoiceGeneration() throws InterruptedException {
 			LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
 			LoginPOM_Retail.clickLoginBtn(); 
-			screenShot.captureScreenShot("First");
-			HomePOM_Retail.ClickonOnProducts();
-			ProductsPOM_Retail.ProductName("Integer vitae iaculis massa");
-			ProductsPOM_Retail.FilterButtonClick();
-			ProductsPOM_Retail.InputPrice("805");
-			ProductsPOM_Retail.FilterButtonClick();
-			screenShot.captureScreenShot("RTTC014");
-			String expectedmessage = "Integer vitae iaculis massa";
-		    String actualMessage = ProductsPOM_Retail.Filtered();
-		    screenShot.captureScreenShot("RTTC014_1");
-		    Assert.assertEquals(actualMessage,expectedmessage);
-		    Thread.sleep(3000);
-		    
+			HomePOM_Retail.ShoppingCartOrders();
+			ShoppingCartOrdersPOM_Retail.ClickonView();
+			ShoppingCartOrdersPOM_Retail.Clickoninvoicebutton();
+			ShoppingCartOrdersPOM_Retail.invoicenumber();
+			Thread.sleep(2000);
+			String expectedmessage = "INV";
+		    String actualMessage =ShoppingCartOrdersPOM_Retail.invoicenumber();
+		    Assert.assertTrue(actualMessage.contains(expectedmessage));
+			Thread.sleep(3000);
 			
 	}
 	   
 	   @AfterClass
-	   
 		public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 		}
-
+		
 	}
 	
 

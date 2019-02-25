@@ -3,13 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.DeleteCategoryTest_RTTC13">
+      <class name="com.training.sanity.tests.ProductsTest_RTTC041">
         <methods>
-          <include name="setUpBeforeClass"/>
+          <include name="FilterProductDetailsByQuantity"/>
           <include name="tearDown"/>
-          <include name="DeleteCategoryTest"/>
+          <include name="FilterProductDetailsByPrice"/>
+          <include name="setUpBeforeClass"/>
+          <include name="FilterProductDetailsByModel"/>
+          <include name="FilterProductDetails"/>
+          <include name="FilterProductDetailsByStatus"/>
+          <include name="FilterProductDetailsByImage"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.DeleteCategoryTest_RTTC13 -->
+      </class> <!-- com.training.sanity.tests.ProductsTest_RTTC041 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
