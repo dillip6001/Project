@@ -48,21 +48,30 @@ import org.testng.annotations.AfterMethod;
 		}		
 	   @Test(priority=1)
 		public void DeleteProductTest() throws InterruptedException {
-			LoginPOM_Retail.sendUserName("admin");
+		  //logging to the application with admin user id & password
+		    LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
+		  //clicking on login button
 			LoginPOM_Retail.clickLoginBtn(); 
+		  //clicking on products link from Catalog icon on HomePage
 			HomePOM_Retail.ClickonOnProducts();
+	      //select the check box against FingerRing product.
 			ProductsPOM_Retail.FingerRingcheckbox();
+		  //select the check box against EarRings product.	
 			ProductsPOM_Retail.EarRingscheckbox();
+		  //clicking on Delete button icon on the Products page. 	
 	    	ProductsPOM_Retail.DeleteButtonClick();
+	      //selecting the OK option on the alert message to confirm deletion products.
 			ProductsPOM_Retail.AlertAccept();
 			Thread.sleep(2000);
+		  // Assertion for the successful message once you delete the intended products from the product page. 
 			String expectedmessage = "Success: You have modified products!";
 		    String actualMessage = ProductsPOM_Retail.AlertSuccess();
 		    Assert.assertTrue(actualMessage.contains(expectedmessage));
 			    
 			
 	}
+	// closing all the browser instances opened by WebDriver.
 	   @AfterClass
 		public void tearDown() throws Exception {
 		Thread.sleep(1000);

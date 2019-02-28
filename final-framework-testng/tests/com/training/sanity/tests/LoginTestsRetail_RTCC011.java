@@ -42,6 +42,8 @@ public class LoginTestsRetail_RTCC011 {
 		driver.get(baseUrl);
 	}
 	
+	// closing all the browser instances opened by WebDriver.
+	
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(2000);
@@ -49,10 +51,14 @@ public class LoginTestsRetail_RTCC011 {
 	}
 	@Test
 	public void validLoginTest() {
+	//   logging to the application with admin user id & password 
 		loginPOM_Retail.sendUserName("admin");
 		loginPOM_Retail.sendPassword("admin@123");
+	//  clicking on login button 	
 		loginPOM_Retail.clickLoginBtn(); 
+	//   capturing the screen shot of HomePage	
 		screenShot.captureScreenShot("RTTC011");
+	//  Assertions for HomePage tile
 		String expectedTitle = "Dashboard";
 	    String actualTitle = driver.getTitle();
 	    Assert.assertEquals(actualTitle, expectedTitle);

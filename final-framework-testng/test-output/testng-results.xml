@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29036" started-at="2019-02-25T14:46:26Z" finished-at="2019-02-25T14:46:55Z">
+  <suite name="Default suite" duration-ms="30452" started-at="2019-02-28T07:54:05Z" finished-at="2019-02-28T07:54:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29036" started-at="2019-02-25T14:46:26Z" finished-at="2019-02-25T14:46:55Z">
-      <class name="com.training.sanity.tests.EditQuantityOfProductTest_RTTC43">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.EditQuantityOfProductTest_RTTC43@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="14619" started-at="2019-02-25T14:46:26Z" finished-at="2019-02-25T14:46:41Z">
+    <test name="Default test" duration-ms="30452" started-at="2019-02-28T07:54:05Z" finished-at="2019-02-28T07:54:35Z">
+      <class name="com.training.sanity.tests.ProductsTest_RTTC041">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="10590" started-at="2019-02-28T07:54:05Z" finished-at="2019-02-28T07:54:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="DeleteProductTest()[pri:1, instance:com.training.sanity.tests.EditQuantityOfProductTest_RTTC43@42d80b78]" name="DeleteProductTest" duration-ms="12583" started-at="2019-02-25T14:46:41Z" finished-at="2019-02-25T14:46:53Z">
+        <test-method status="PASS" signature="FilterProductDetails()[pri:1, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetails" duration-ms="7005" started-at="2019-02-28T07:54:16Z" finished-at="2019-02-28T07:54:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DeleteProductTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.EditQuantityOfProductTest_RTTC43@42d80b78]" name="tearDown" is-config="true" duration-ms="1800" started-at="2019-02-25T14:46:53Z" finished-at="2019-02-25T14:46:55Z">
+        </test-method> <!-- FilterProductDetails -->
+        <test-method status="PASS" signature="FilterProductDetailsByPrice()[pri:2, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByPrice" duration-ms="1785" started-at="2019-02-28T07:54:23Z" finished-at="2019-02-28T07:54:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FilterProductDetailsByPrice -->
+        <test-method status="PASS" signature="FilterProductDetailsByStatus()[pri:3, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByStatus" duration-ms="1743" started-at="2019-02-28T07:54:24Z" finished-at="2019-02-28T07:54:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FilterProductDetailsByStatus -->
+        <test-method status="PASS" signature="FilterProductDetailsByModel()[pri:4, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByModel" duration-ms="2796" started-at="2019-02-28T07:54:26Z" finished-at="2019-02-28T07:54:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FilterProductDetailsByModel -->
+        <test-method status="PASS" signature="FilterProductDetailsByQuantity()[pri:5, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByQuantity" duration-ms="2740" started-at="2019-02-28T07:54:29Z" finished-at="2019-02-28T07:54:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FilterProductDetailsByQuantity -->
+        <test-method status="PASS" signature="FilterProductDetailsByImage()[pri:6, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByImage" duration-ms="2026" started-at="2019-02-28T07:54:32Z" finished-at="2019-02-28T07:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FilterProductDetailsByImage -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="tearDown" is-config="true" duration-ms="1742" started-at="2019-02-28T07:54:34Z" finished-at="2019-02-28T07:54:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.EditQuantityOfProductTest_RTTC43 -->
+      </class> <!-- com.training.sanity.tests.ProductsTest_RTTC041 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

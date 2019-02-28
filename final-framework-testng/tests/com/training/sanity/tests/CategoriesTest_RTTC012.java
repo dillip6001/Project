@@ -51,15 +51,21 @@ import com.training.pom.HomePOM_Retail;
 
 	   @Test (priority=1)
 		public void DisplayCategoryList() throws InterruptedException {
-			LoginPOM_Retail.sendUserName("admin");
+		//   logging to the application with admin user id & password
+		    LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
+		//  clicking on login button 
 			LoginPOM_Retail.clickLoginBtn(); 
+		//  clicking on Categories link from Catalog icon on HomePage	
 			HomePOM_Retail.ClickonOnCategories();
+		// capturing screen shot for categories page	
 			screenShot.captureScreenShot("RTTC012");
+		// Assertion for categories List 	
 			assertTrue(driver.getPageSource().contains("Category List"));
 			
 	}
 	   
+	// closing all the browser instances opened by WebDriver.
 	   @AfterClass
 		public void tearDown() throws Exception {
 		Thread.sleep(1000);

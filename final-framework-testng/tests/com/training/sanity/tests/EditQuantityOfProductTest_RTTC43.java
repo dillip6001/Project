@@ -50,21 +50,29 @@ import org.testng.annotations.AfterMethod;
 		}		
 	   @Test(priority=1)
 		public void DeleteProductTest() throws InterruptedException {
-			LoginPOM_Retail.sendUserName("admin");
+		//  logging to the application with admin user id & password
+		    LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
+		//  clicking on login button 
 			LoginPOM_Retail.clickLoginBtn(); 
+		//  clicking on products link from Catalog icon on HomePage	
 			HomePOM_Retail.ClickonOnProducts();
+		//  clicking on Edit icon on Action column.	
 			ProductsPOM_Retail.ClickOnEdit();
+		//  clicking on data tab on Edit Product page.		
 			AddProductPOM_Retail.ClickOnDatatab();
+		//  clear the quantity & add the quantity as per your need in data tab.	
 			AddProductPOM_Retail.AddQuantity("45");
+		//  click on save button .icon to save the edited quantity.	
 			AddProductPOM_Retail.ClickOnSave();
 			Thread.sleep(3000);
+	    // Assertion for the successful message once you edit the quantity from the product page. 	
 			String expectedmessage ="Success: You have modified products!";
 	        String actualMessage = ProductsPOM_Retail.AlertSuccess();
 		    Assert.assertTrue(actualMessage.contains(expectedmessage));
-			    
 			
 	}
+	// closing all the browser instances opened by WebDriver.
 	   @AfterClass
 		public void tearDown() throws Exception {
 		Thread.sleep(1000);

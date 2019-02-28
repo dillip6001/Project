@@ -49,25 +49,33 @@ import org.testng.annotations.AfterMethod;
 
 	   @Test (priority=1)
 		public void FilterProductDetails() throws InterruptedException {
-			LoginPOM_Retail.sendUserName("admin");
+		//   logging to the application with admin user id & password
+		    LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
+		//  clicking on login button 
 			LoginPOM_Retail.clickLoginBtn(); 
 			screenShot.captureScreenShot("First");
+		//  clicking on products link from Catalog icon on HomePage	
 			HomePOM_Retail.ClickonOnProducts();
+		//  Entering the productname & click on Filterbutton image.	
 			ProductsPOM_Retail.ProductName("Integer vitae iaculis massa");
 			ProductsPOM_Retail.FilterButtonClick();
+		//  Entering the price & click on Filterbutton image.		
 			ProductsPOM_Retail.InputPrice("805");
 			ProductsPOM_Retail.FilterButtonClick();
 			screenShot.captureScreenShot("RTTC014");
+		//  Assertion for  Filtered product details with the input product name .	
 			String expectedmessage = "Integer vitae iaculis massa";
 		    String actualMessage = ProductsPOM_Retail.Filtered();
 		    screenShot.captureScreenShot("RTTC014_1");
 		    Assert.assertEquals(actualMessage,expectedmessage);
-		    Thread.sleep(3000);
+		// static wait for 2 seconds.   
+		    Thread.sleep(2000);
 		    
 			
 	}
-	   
+	  
+	// closing all the browser instances opened by WebDriver.
 	   @AfterClass
 	   
 		public void tearDown() throws Exception {

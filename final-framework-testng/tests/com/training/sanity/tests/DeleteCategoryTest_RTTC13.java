@@ -41,19 +41,27 @@ public class DeleteCategoryTest_RTTC13 {
 	}
 	 @Test (priority=1)
 		public void DeleteCategoryTest() throws InterruptedException {
-			LoginPOM_Retail.sendUserName("admin");
+	       //logging to the application with admin user id & password
+		    LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
+	       //clicking on login button	
 			LoginPOM_Retail.clickLoginBtn(); 
+		   //clicking on Categories link from Catalog icon on HomePage	
 			HomePOM_Retail.ClickonOnCategories();
+		  // select the checkbox against category Ethnic.
 		    CateogriesPOM_Retail.checkbox();
-			CateogriesPOM_Retail.DeleteCategory();
+		  // clicking on Delete button icon on the categories page.  
+		 	CateogriesPOM_Retail.DeleteCategory();
 			screenShot.captureScreenShot("RTTC013");
+		  // Assertion for the successful message once you delete the intended category from the category page. 	
 			String expectedmessage = "Success: You have modified categories!";
 		    String actualMessage = CateogriesPOM_Retail.AlertSuccess();
 		      Assert.assertTrue(actualMessage.contains(expectedmessage));
 		    
 			
 	}
+	 
+	// closing all the browser instances opened by WebDriver.
 	 
 	 @AfterClass
 		public void tearDown() throws Exception {

@@ -50,28 +50,43 @@ import org.testng.annotations.AfterMethod;
 		}		
 	   @Test(priority=1)
 		public void AddProductTest() throws InterruptedException {
-			LoginPOM_Retail.sendUserName("admin");
+		//  logging to the application with admin user id & password
+		    LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
+		//  clicking on login button 
 			LoginPOM_Retail.clickLoginBtn(); 
+		//  clicking on products link from Catalog icon on HomePage
 			HomePOM_Retail.ClickonOnProducts();
+		//  clicking on AddNew button(+ symbol) to add the product you need.	
 			ProductsPOM_Retail.AddNew();
+		//  Navigating to addProduct name & in general tab enter product name	
 			AddProductPOM_Retail.Addproductname("Finger Ring");
+		// In General tab enter Meta Tag Tile 	
 			AddProductPOM_Retail.AddMetaTagTitle("Finger Ring for ladies");
+		//  clicking to Data Tab in AddProduct page.	
 			AddProductPOM_Retail.ClickOnDatatab();
+		// Add/Enter  the model in 	AddModel text box on Data tab.
 			AddProductPOM_Retail.AddModel("SKU-012");
+		//	Enter  the price in text box on Data tab.
 			AddProductPOM_Retail.AddPrice("500");
+		//	Enter  the quantity text box on Data tab.
 			AddProductPOM_Retail.AddQuantity("50");
+		// click on Links tab in AddProduct page 	
 			AddProductPOM_Retail.ClickOnLinkstab();
+		//  Enter  the category text box on Links tab.	
 			AddProductPOM_Retail.AddCategory("EARRINGS");
+		//  click on save icon /button.
 	    	AddProductPOM_Retail.ClickOnSave();
-			
-			Thread.sleep(3000);
+		// 	static wait for 2 seconds.
+			Thread.sleep(2000);
+		//  Assertion for the successful message once you add the intended product from the  product page. 	
 			String expectedmessage = "Success: You have modified products!";
 	        String actualMessage = ProductsPOM_Retail.AlertSuccess();
 		    Assert.assertTrue(actualMessage.contains(expectedmessage));
 			    
 			
 	}
+	// closing all the browser instances opened by WebDriver.
 	   @AfterClass
 		public void tearDown() throws Exception {
 		Thread.sleep(1000);

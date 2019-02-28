@@ -54,21 +54,28 @@ import com.training.utility.DriverFactory;
 
 	   @Test (priority=1)
 		public void InvoiceGeneration() throws InterruptedException {
-			LoginPOM_Retail.sendUserName("admin");
+		//  logging to the application with admin user id & password & clicking login button
+		    LoginPOM_Retail.sendUserName("admin");
 			LoginPOM_Retail.sendPassword("admin@123");
 			LoginPOM_Retail.clickLoginBtn(); 
+		//  clicking on orders link from Shopping Cart icon.
 			HomePOM_Retail.ShoppingCartOrders();
+		//  clicking on view icon/image to navigate to order details of the customer.	
 			ShoppingCartOrdersPOM_Retail.ClickonView();
+		//  clicking on invoice image to get invoice number generated  of the customer. 	
 			ShoppingCartOrdersPOM_Retail.Clickoninvoicebutton();
 			ShoppingCartOrdersPOM_Retail.invoicenumber();
 			Thread.sleep(2000);
+		//  Assertion for invoice number generation 
 			String expectedmessage = "INV";
 		    String actualMessage =ShoppingCartOrdersPOM_Retail.invoicenumber();
 		    Assert.assertTrue(actualMessage.contains(expectedmessage));
+		 // static wait for 3 seconds.
 			Thread.sleep(3000);
 			
 	}
-	   
+	
+	 //  closing all the browser instances opened  by WebDriver.
 	   @AfterClass
 		public void tearDown() throws Exception {
 		Thread.sleep(1000);
