@@ -1,45 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30452" started-at="2019-02-28T07:54:05Z" finished-at="2019-02-28T07:54:35Z">
+  <suite name="Default suite" duration-ms="54197" started-at="2019-03-09T09:29:28Z" finished-at="2019-03-09T09:30:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30452" started-at="2019-02-28T07:54:05Z" finished-at="2019-02-28T07:54:35Z">
-      <class name="com.training.sanity.tests.ProductsTest_RTTC041">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="10590" started-at="2019-02-28T07:54:05Z" finished-at="2019-02-28T07:54:16Z">
+    <test name="Default test" duration-ms="54197" started-at="2019-03-09T09:29:28Z" finished-at="2019-03-09T09:30:22Z">
+      <class name="com.training.sanity.tests.EndtoEndTest_RTTC74">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.EndtoEndTest_RTTC74@3bfdc050]" name="setUpBeforeClass" is-config="true" duration-ms="14" started-at="2019-03-09T09:29:28Z" finished-at="2019-03-09T09:29:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="FilterProductDetails()[pri:1, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetails" duration-ms="7005" started-at="2019-02-28T07:54:16Z" finished-at="2019-02-28T07:54:23Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.EndtoEndTest_RTTC74@3bfdc050]" name="setUp" is-config="true" duration-ms="14680" started-at="2019-03-09T09:29:28Z" finished-at="2019-03-09T09:29:43Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FilterProductDetails -->
-        <test-method status="PASS" signature="FilterProductDetailsByPrice()[pri:2, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByPrice" duration-ms="1785" started-at="2019-02-28T07:54:23Z" finished-at="2019-02-28T07:54:24Z">
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.EndtoEndTest_RTTC74@3bfdc050]" name="validLoginTest" duration-ms="36870" started-at="2019-03-09T09:29:43Z" finished-at="2019-03-09T09:30:20Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'DESKTOP-15F7O0H', ip: '192.168.0.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:59006}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387), userDataDir=C:\Users\DILLIP~1\AppData\Local\Temp\scoped_dir19656_8836}, takesHeapSnapshot=true, unhandledPromptBehavior=ignore, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=72.0.3626.121, browserConnectionEnabled=false, proxy=Proxy(), nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1e26e913604a16c660cf37388fa68839
+*** Element info: {Using=xpath, value=//input[@value='guest']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'DESKTOP-15F7O0H', ip: '192.168.0.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:59006}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387), userDataDir=C:\Users\DILLIP~1\AppData\Local\Temp\scoped_dir19656_8836}, takesHeapSnapshot=true, unhandledPromptBehavior=ignore, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=72.0.3626.121, browserConnectionEnabled=false, proxy=Proxy(), nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1e26e913604a16c660cf37388fa68839
+*** Element info: {Using=xpath, value=//input[@value='guest']}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy10.click(Unknown Source)
+at com.training.pom.CheckOutPOM_Retail.GuestCheckOut(CheckOutPOM_Retail.java:137)
+at com.training.sanity.tests.EndtoEndTest_RTTC74.validLoginTest(EndtoEndTest_RTTC74.java:95)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FilterProductDetailsByPrice -->
-        <test-method status="PASS" signature="FilterProductDetailsByStatus()[pri:3, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByStatus" duration-ms="1743" started-at="2019-02-28T07:54:24Z" finished-at="2019-02-28T07:54:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FilterProductDetailsByStatus -->
-        <test-method status="PASS" signature="FilterProductDetailsByModel()[pri:4, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByModel" duration-ms="2796" started-at="2019-02-28T07:54:26Z" finished-at="2019-02-28T07:54:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FilterProductDetailsByModel -->
-        <test-method status="PASS" signature="FilterProductDetailsByQuantity()[pri:5, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByQuantity" duration-ms="2740" started-at="2019-02-28T07:54:29Z" finished-at="2019-02-28T07:54:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FilterProductDetailsByQuantity -->
-        <test-method status="PASS" signature="FilterProductDetailsByImage()[pri:6, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="FilterProductDetailsByImage" duration-ms="2026" started-at="2019-02-28T07:54:32Z" finished-at="2019-02-28T07:54:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FilterProductDetailsByImage -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.ProductsTest_RTTC041@42d80b78]" name="tearDown" is-config="true" duration-ms="1742" started-at="2019-02-28T07:54:34Z" finished-at="2019-02-28T07:54:35Z">
+        </test-method> <!-- validLoginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.EndtoEndTest_RTTC74@3bfdc050]" name="tearDown" is-config="true" duration-ms="2599" started-at="2019-03-09T09:30:20Z" finished-at="2019-03-09T09:30:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.ProductsTest_RTTC041 -->
+      </class> <!-- com.training.sanity.tests.EndtoEndTest_RTTC74 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

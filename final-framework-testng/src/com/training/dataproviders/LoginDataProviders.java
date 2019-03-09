@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 import com.training.bean.LoginBean;
 import com.training.dao.ELearningDAO;
 import com.training.readexcel.ApachePOIExcelRead;
+import com.training.readexcel.ApachePOIExcelRead2;
 import com.training.readexcel.ReadExcel;
 
 public class LoginDataProviders {
@@ -32,9 +33,17 @@ public class LoginDataProviders {
 	
 	@DataProvider(name = "excel-inputs")
 	public Object[][] getExcelData(){
-		String fileName ="C:/Users/Naveen/Desktop/Testing.xlsx"; 
+		String fileName ="C:\\Users\\DILLIPBEHERA\\Desktop\\TestData.xlsx"; 
 		return new ApachePOIExcelRead().getExcelContent(fileName); 
 	}
+	
+	
+	@DataProvider(name = "excel-inputs1")
+	public Object[][] getExcelData1(){
+		String fileName ="C:\\Users\\DILLIPBEHERA\\Desktop\\TestData.xlsx"; 
+		return new ApachePOIExcelRead2().getExcelContent(fileName); 
+	}	
+	
 	
 	@DataProvider(name = "xls-inputs")
 	public Object[][] getXLSData(){

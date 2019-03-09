@@ -62,6 +62,7 @@ public class LoginTestsRetail_RTCC011 {
 		String expectedTitle = "Dashboard";
 	    String actualTitle = driver.getTitle();
 	    Assert.assertEquals(actualTitle, expectedTitle);
+	    
 		
 		
 	}

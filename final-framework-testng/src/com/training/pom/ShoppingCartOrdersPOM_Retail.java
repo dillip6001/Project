@@ -1,10 +1,12 @@
 package com.training.pom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class ShoppingCartOrdersPOM_Retail {
 	private WebDriver driver; 
@@ -45,7 +47,42 @@ public class ShoppingCartOrdersPOM_Retail {
 		this.invoicebutton.click();
 		
 	}	
+	@FindBy(xpath="//table/tbody/tr[1]/td[8]/a")
+	private WebElement view1;
 	
+	public void ClickonView1() {
+		this.view1.click();
+		
+	}
 	
+	public void Scorlldowntolast(){
+		
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("window.scrollBy(0,1600)");
+		 
+		 
+	}	
+	
+	@FindBy(id="button-history")
+	private WebElement AddHistory;
+	
+	public void ClickonAddhistory(){
+		
+		this.AddHistory.click();
+	}
+	@FindBy(css=".alert")
+	private WebElement gettext;
+	
+public String  GetText(){
+		
+		return this.gettext.getText();
+	}
+
+public void  SelectComplete()  {
+	 Select dropdown=new Select (driver.findElement(By.id("input-order-status")));
+	 dropdown.selectByVisibleText("Complete");
+}		 
+
+
 	
 }

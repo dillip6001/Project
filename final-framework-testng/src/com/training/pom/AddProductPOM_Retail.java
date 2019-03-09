@@ -41,6 +41,60 @@ public class AddProductPOM_Retail {
 	@FindBy(xpath="//button[@type='submit']")
 	private WebElement Savebutton;
 	
+	@FindBy(xpath="//a[contains(text(),'Discount')]")
+	private WebElement Discounttab;
+	
+    public void ClickOnDiscounttab() {
+		
+		this.Discounttab.click();
+	}	
+	
+    @FindBy(xpath="//div[@class='tab-pane active']//i[@class='fa fa-plus-circle']")
+	private WebElement AddDiscount; 
+    
+ public void ClickOnAddDiscount() {
+		
+		this.AddDiscount.click();
+	}	
+ 
+ @FindBy(xpath="//tr[@id='discount-row0']//input[@placeholder='Quantity']")
+	private WebElement QuantityDiscount;
+ 
+ public void SendQuantity(String quantitydiscount) {
+		
+		this.QuantityDiscount.sendKeys(quantitydiscount);
+		
+	}	
+
+ @FindBy(xpath="//tr[@id='discount-row0']//input[@placeholder='Price']")
+	private WebElement PriceDiscount;
+ 
+ public void SendPricediscount(String pricediscount) {
+		
+		this.PriceDiscount.sendKeys(pricediscount);
+		
+	}
+ 
+ 
+ @FindBy(xpath="//a[@href='#tab-reward']")
+	private WebElement RewardPointstab;
+ 
+ public void ClickOnRewardPointstab() {
+		
+		this.RewardPointstab.click();
+	}	
+ 
+ 
+ @FindBy(id="input-points")
+	private WebElement RewardsPoint;
+ 
+ public void AddRewardpoints(String rewardpoint) {
+		
+		this.RewardsPoint.sendKeys(rewardpoint);
+		
+ }
+ 
+	
 // method to enter the product name in general tab in AddProduct page.		
 	public void Addproductname(String FingerRing) {
 				

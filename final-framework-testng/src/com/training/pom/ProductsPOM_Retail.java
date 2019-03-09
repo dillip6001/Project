@@ -159,6 +159,16 @@ public String  AlertSuccess() throws InterruptedException {
 			
 			return this.Alert.getText();
 }
+public String  AlertFailureMessage() throws InterruptedException {
+	
+	Thread.sleep(2000);
+	
+	return this.Alert.getText();
+}
+
+
+
+
 // method to get the text once you filtered the product by price in webtable.
 public String  Filtered() throws InterruptedException {
 			
